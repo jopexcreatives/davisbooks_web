@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Davis Books – Mr. Davis Atuahene Agyei – Author, Speaker. Discover and purchase inspiring books via WhatsApp or Amazon." />
+  <title>Davis Books | Homepage and More</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar main-nav navbar-expand-lg">
+    <div class="container">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand nav-brand" href="index.html">
+        <div class="nav-logo-icon">D</div>
+        Davis Books <span class="accent">And More</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="all-books.html">All Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions-group ms-auto mt-3 mt-lg-0">
+          <!-- Search -->
+          <button class="nav-icon-action" aria-label="Search" onclick="window.location='all-books.html'">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <!-- Cart -->
+          <button class="nav-icon-action nav-cart-btn" aria-label="Shopping Cart">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="nav-cart-badge">0</span>
+          </button>
+
+          <!-- Login -->
+          <a href="#login" class="btn-nav-account">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== HERO ======== -->
+  <section class="hero-section" id="home" style="background-image: url('images/hero-bg-new.jpg?v=2') !important; background-size: cover !important; background-position: right top !important; background-repeat: no-repeat !important;">
+    <div class="hero-overlay"></div>
+
+    <!-- Content overlay -->
+    <div class="container position-relative" style="z-index: 2; padding: 4.5rem 1rem;">
+      <div style="max-width: 620px;">
+        <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: inline-block;">WELCOME TO DAVIS BOOKS</span>
+        <h1 style="font-family: var(--font-serif); font-size: clamp(2.6rem, 5.2vw, 3.8rem); font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 1.25rem;">
+          Discover Truth.<br />
+          <span class="gradient-shimmer" style="font-weight: 800; font-size: 1em; font-style: normal; display: inline-block;">Strengthen Faith.</span>
+        </h1>
+        <p style="font-size: 1.05rem; color: rgba(255, 255, 255, 0.85); line-height: 1.65; margin-bottom: 2rem;">
+          Explore biblical insights on faith, redemption, and God's purpose through the books of Mr. Davis Atuahene Agyei.
+        </p>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <a href="all-books.html" class="btn-gold" style="border-radius: 8px; padding: 0.75rem 1.8rem; font-weight: 600; text-decoration: none;">
+            Explore Books <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+          <a href="#about" class="btn-outline-white" style="border-radius: 8px; padding: 0.75rem 1.8rem; font-weight: 600; color: #ffffff; border: 1px solid rgba(255,255,255,0.6); text-decoration: none;">
+            Meet the Author
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT THE AUTHOR ======== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Text Left -->
+        <div class="col-lg-7 about-body order-2 order-lg-1 pe-lg-4">
+          <span class="label-tag">About the Author</span>
+          <h2 id="aboutName">Mr. Davis Atuahene Agyei</h2>
+          <div class="gold-line-left" style="margin-bottom: 1.5rem;"></div>
+          <div style="text-align: justify; font-size: calc(0.92rem + 3px); font-weight: 500; margin-bottom: 1.5rem; line-height: 1.75; color: #2d3748;">
+            <p style="margin-bottom: 0.85rem;">Mr. Davis Atuahene Agyei is a Ghanaian pastor, teacher, lecturer, author, and thought leader. He serves at GM Cathedral and is the Executive Director and Lead Consultant of the Atlantic Institute of Development and Education (AIDE).</p>
+            <p style="margin-bottom: 0.85rem;">Through his books, he explores important biblical teachings on faith, redemption, temptation, the Church, and God's purpose for humanity and the nations.</p>
+          </div>
+
+          <!-- Feature Highlight Cards -->
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-center gap-3 p-3 reveal-card delay-1" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+              <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                <i class="bi bi-person-check fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: var(--navy); font-size: 0.98rem;">Experienced Educator</h6>
+                <p class="mb-0" style="font-size: 0.88rem; font-weight: 500; color: #5a6a80; line-height: 1.45;">Years of teaching and mentoring students and young people.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 p-3 reveal-card delay-2" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+              <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                <i class="bi bi-book fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: var(--navy); font-size: 0.98rem;">Published Author</h6>
+                <p class="mb-0" style="font-size: 0.88rem; font-weight: 500; color: #5a6a80; line-height: 1.45;">A collection of books on faith, education, and spiritual growth.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 p-3 reveal-card delay-3" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+              <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                <i class="bi bi-people fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: var(--navy); font-size: 0.98rem;">Community Advocate</h6>
+                <p class="mb-0" style="font-size: 0.88rem; font-weight: 500; color: #5a6a80; line-height: 1.45;">Committed to creating positive change through education and God's Word.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="all-books.html" class="btn-gold" style="border-radius: 8px; padding: 0.7rem 1.8rem;">View All Books</a>
+            <a href="contact.html" class="btn-outline-navy" style="border-radius: 8px; padding: 0.7rem 1.8rem;">Get in Touch</a>
+          </div>
+        </div>
+        <!-- Photo Right -->
+        <div class="col-lg-5 text-center order-1 order-lg-2 d-flex justify-content-center align-items-center">
+          <div class="author-photo-frame" style="width: 100%; max-width: 420px;">
+            <img src="images/author-portrait.png" alt="Mr. Davis Atuahene Agyei" class="author-photo" style="max-width: 100%; border-radius: 12px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FEATURED BOOKS ======== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <section class="featured-books-section" id="books">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4 pt-5 flex-wrap gap-3">
+        <div>
+          <h2 class="featured-title text-start mb-0" style="text-align: left;">Featured Books</h2>
+        </div>
+        <div>
+          <a href="all-books.html" class="btn-outline-navy" style="border-radius: 8px; padding: 0.55rem 1.4rem;">
+            View All Books <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Swiper with fade gradient mask -->
+      <div class="books-swiper-wrap">
+        <div class="swiper books-swiper">
+          <div class="swiper-wrapper">
+
+        <!-- SLIDE 1: The Expected Glory -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Expected Glory of the Latter Church-1.jpg.jpeg" alt="The Expected Glory of the Latter Church" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Expected Glory of the Latter Church</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Expected%20Glory" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: Jesus Must Remain -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Jesus Must Remain in Heaven UNTIL... (1)-1.jpg.jpeg" alt="Jesus Must Remain in Heaven Until..." />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Jesus Must Remain in Heaven Until...</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Jesus%20Must%20Remain" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: Who Told You That You Were Naked -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/WHO TOLD YOU THAT YOU WERE NAKED-1.png" alt="Who Told You That You Were Naked?" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Who Told You That You Were Naked?</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Who%20Told%20You" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: Temptation -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Temptation front.jpg.jpeg" alt="Temptation" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Temptation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 55.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Temptation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 5: The Making of a Nation -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Making of a Nation-1.jpg" alt="The Making of a Nation" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Making of a Nation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Making%20of%20a%20Nation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 6: The Expected Glory -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Expected Glory of the Latter Church-1.jpg.jpeg" alt="The Expected Glory of the Latter Church" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Expected Glory of the Latter Church</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Expected%20Glory" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 7: Jesus Must Remain -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Jesus Must Remain in Heaven UNTIL... (1)-1.jpg.jpeg" alt="Jesus Must Remain in Heaven Until..." />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Jesus Must Remain in Heaven Until...</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Jesus%20Must%20Remain" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 8: Who Told You That You Were Naked -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/WHO TOLD YOU THAT YOU WERE NAKED-1.png" alt="Who Told You That You Were Naked?" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Who Told You That You Were Naked?</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Who%20Told%20You" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 9: Temptation -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Temptation front.jpg.jpeg" alt="Temptation" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Temptation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 55.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Temptation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 10: The Making of a Nation -->
+        <div class="swiper-slide">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Making of a Nation-1.jpg" alt="The Making of a Nation" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Making of a Nation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Making%20of%20a%20Nation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="pb-5"></div>
+  </section>
+
+
+
+
+  <!-- ======== AMAZON SECTION ======== -->
+  <section class="amazon-section">
+    <div class="container text-center">
+      <h2 style="color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:0.5rem;">Also Available on Amazon</h2>
+      <p style="color:rgba(255,255,255,0.7);margin-bottom:2rem;">Find Mr. Davis' books on Amazon — Kindle or paperback, delivered worldwide.</p>
+      <a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" class="btn-amazon">
+        <i class="bi bi-bag-fill me-2"></i>Shop on Amazon
+      </a>
+    </div>
+  </section>
+
+  <!-- ======== SOCIAL MEDIA ======== -->
+  <section class="social-section section-pad">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Follow &amp; Connect</h2>
+        <div class="gold-line"></div>
+        <p class="text-muted">Stay updated with new releases, events, and inspiration</p>
+      </div>
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://facebook.com" target="_blank" class="social-card reveal-card delay-1">
+            <div class="social-icon" style="color:#1877F2;"><i class="bi bi-facebook"></i></div>
+            <strong>Facebook</strong><p>Follow on Facebook</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://instagram.com" target="_blank" class="social-card reveal-card delay-2">
+            <div class="social-icon" style="color:#E4405F;"><i class="bi bi-instagram"></i></div>
+            <strong>Instagram</strong><p>Follow on Instagram</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="social-card reveal-card delay-3">
+            <div class="social-icon" style="color:#FF0000;"><i class="bi bi-youtube"></i></div>
+            <strong>YouTube</strong><p>Watch &amp; Subscribe</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://tiktok.com" target="_blank" class="social-card reveal-card delay-4">
+            <div class="social-icon" style="color:#010101;"><i class="bi bi-tiktok"></i></div>
+            <strong>TikTok</strong><p>Follow on TikTok</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://twitter.com" target="_blank" class="social-card reveal-card delay-5">
+            <div class="social-icon" style="color:#1DA1F2;"><i class="bi bi-twitter-x"></i></div>
+            <strong>X (Twitter)</strong><p>Follow on X</p>
+          </a>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <a href="https://linkedin.com" target="_blank" class="social-card reveal-card delay-6">
+            <div class="social-icon" style="color:#0A66C2;"><i class="bi bi-linkedin"></i></div>
+            <strong>LinkedIn</strong><p>Connect</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== NEWSLETTER ======== -->
+  <section class="section-pad" style="background:var(--beige); padding-top:2.5rem; padding-bottom:2.5rem;">
+    <div class="container">
+      <hr style="border:none; border-top:1.5px solid var(--gold); margin:0 0 1.5rem 0; opacity:1;"/>
+      <div class="newsletter-box">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h3>Stay in the Loop</h3>
+            <p>Subscribe to get notified about new releases, discounts, and exclusive content.</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="https://formsubmit.co/davisagyeiatuahene@gmail.com" method="POST" class="d-flex gap-2 flex-wrap">
+              <input type="hidden" name="_subject" value="Newsletter Subscription"/>
+              <input type="hidden" name="_captcha" value="false"/>
+              <input type="email" name="email" class="newsletter-input flex-fill" placeholder="Enter your email address…" required/>
+              <button type="submit" class="btn-gold">Subscribe <i class="bi bi-envelope-check ms-1"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA BAR (like design — "Have Questions?") ======== -->
+  <section class="cta-bar">
+    <div class="container">
+      <hr style="border:none; border-top:1.5px solid var(--gold); margin:0 0 1.5rem 0; opacity:1;"/>
+      <div class="row align-items-center g-3">
+        <div class="col-md-1 text-center d-none d-md-block">
+          <div style="width:55px;height:55px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;">
+            <i class="bi bi-envelope-fill fs-4 text-gold"></i>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <h4>Have Any Questions or Need More Info?</h4>
+          <p>Contact us via WhatsApp or email — we respond quickly!</p>
+        </div>
+        <div class="col-md-3">
+          <a href="https://wa.me/233208154228?text=Hello%20Mr.%20Davis,%20I%20have%20a%20question." target="_blank" class="btn-gold w-100 text-center">
+            Let's Talk <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+            <a href="https://facebook.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">Davis Books And More</span>
+          <p>Dedicated to the propagation of the Gospel through books that inspire faith, reveal biblical truth, and transform lives.</p>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="all-books.html">All Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank">Amazon Store</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Contact</h5>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
+        </div>
+        <div class="col-lg-3">
+          <h5>Purchase Options</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20a%20book" target="_blank"><i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank"><i class="bi bi-bag me-2"></i>Buy on Amazon</a></li>
+            <li><a href="all-books.html"><i class="bi bi-book me-2"></i>Browse All Books</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> Mr. Davis Atuahene Agyei. All rights reserved.
+        &nbsp;|&nbsp; Developed by Jopex Creatives
+      </p>
+    </div>
+  </footer>
+
+  <!-- ======== BOOK PREVIEW MODAL ======== -->
+  <div class="modal fade modal-preview" id="previewModal" tabindex="-1" aria-labelledby="previewTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="previewTitle">Book Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="preview-iframe-wrap">
+          <iframe id="previewIframe" src="" allowfullscreen></iframe>
+          <!-- Overlay blocks after ~2 pages -->
+          <div class="preview-block-overlay">
+            <div class="preview-block-msg">
+              <h5>Enjoying the preview?</h5>
+              <p>You've reached the free preview limit (2 pages).<br/>Purchase the full book to continue reading.</p>
+              <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20this%20book" target="_blank" class="btn-gold me-2" style="font-size:0.82rem;padding:0.55rem 1.2rem;">
+                <i class="bi bi-whatsapp me-1"></i>Buy via WhatsApp
+              </a>
+              <a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" class="btn-amazon" style="font-size:0.82rem;padding:0.55rem 1.2rem;">
+                Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== FLOATING WHATSAPP ======== -->
+  <a href="https://wa.me/233208154228?text=Hello%20Mr.%20Davis,%20I%20would%20like%20to%20know%20more%20about%20your%20books." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // ============================================================
+    //  YEAR
+    // ============================================================
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ============================================================
+    //  CURRENCY SWITCHER
+    // ============================================================
+    const rates = {
+      GHS: { flag: '🇬🇭', symbol: 'GHS', rate: 1      },
+      USD: { flag: '🇺🇸', symbol: '$',   rate: 0.067  },
+      GBP: { flag: '🇬🇧', symbol: '£',   rate: 0.053  },
+      EUR: { flag: '🇪🇺', symbol: '€',   rate: 0.060  },
+      NGN: { flag: '🇳🇬', symbol: '₦',   rate: 106    }
+    };
+    function changeCurrency(currency) {
+      const c = rates[currency];
+      document.querySelectorAll('.price-tag').forEach(el => {
+        const base = parseFloat(el.getAttribute('data-ghs'));
+        el.innerHTML = `${c.flag} ${c.symbol} ${(base * c.rate).toFixed(2)}`;
+      });
+      localStorage.setItem('currency', currency);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('currency') || 'GHS';
+      const sel = document.getElementById('currencySelect');
+      if (sel) sel.value = saved;
+      changeCurrency(saved);
+
+      // Add blurred background to book cards
+      document.querySelectorAll('.book-card-img-wrap').forEach(wrap => {
+        const img = wrap.querySelector('img');
+        if(img) {
+          const bg = document.createElement('div');
+          bg.style.position = 'absolute';
+          bg.style.inset = '-20px';
+          bg.style.backgroundImage = `url('${img.src}')`;
+          bg.style.backgroundSize = 'cover';
+          bg.style.backgroundPosition = 'center';
+          bg.style.filter = 'blur(15px)';
+          bg.style.opacity = '0.5';
+          bg.style.zIndex = '0';
+          wrap.insertBefore(bg, img);
+          
+          wrap.style.display = 'flex';
+          wrap.style.alignItems = 'center';
+          wrap.style.justifyContent = 'center';
+          wrap.style.padding = '1.5rem';
+          
+          img.style.position = 'relative';
+          img.style.zIndex = '1';
+          img.style.maxHeight = '100%';
+          img.style.width = 'auto';
+          img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
+          img.style.borderRadius = '4px';
+        }
+      });
+    });
+
+    // ============================================================
+    //  COOLORS TEXT HOVER ANIMATION
+    // ============================================================
+    const coolorsColors = ['#F94144', '#F3722C', '#F8961E', '#F9C74F', '#90BE6D', '#43AA8B', '#577590'];
+
+    function initCoolorsHover(el) {
+      if (!el) return;
+      const text = el.textContent;
+      el.textContent = '';
+      el.style.display = 'inline-block';
+      el.classList.add('coolors-text');
+
+      const spans = [];
+      for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+        span.className = 'coolors-char';
+        el.appendChild(span);
+        spans.push(span);
+      }
+
+      el.addEventListener('mouseenter', () => {
+        spans.forEach((span, i) => {
+          if(span.textContent !== '\u00A0') {
+            const color = coolorsColors[i % coolorsColors.length];
+            span.style.color = color;
+            span.style.transform = 'translateY(-3px)';
+          }
+        });
+      });
+
+      el.addEventListener('mouseleave', () => {
+        spans.forEach(span => {
+          span.style.color = '';
+          span.style.transform = 'translateY(0)';
+        });
+      });
+    }
+
+    // ============================================================
+    //  BOOK PREVIEW MODAL
+    // ============================================================
+    function openPreview(title, driveUrl) {
+      document.getElementById('previewTitle').textContent = 'Preview: ' + title;
+      document.getElementById('previewIframe').src = driveUrl;
+      const modal = new bootstrap.Modal(document.getElementById('previewModal'));
+      modal.show();
+    }
+    // Clear iframe src on modal close (to stop loading)
+    document.getElementById('previewModal').addEventListener('hidden.bs.modal', () => {
+      document.getElementById('previewIframe').src = '';
+    });
+
+    // ============================================================
+    //  SCROLL ANIMATION OBSERVER
+    // ============================================================
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal-card, .reveal-fade-right').forEach(el => {
+      scrollObserver.observe(el);
+    });
+  </script>
+
+  <!-- Swiper JS (must load BEFORE init script) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // ============================================================
+    //  SWIPER BOOKS CAROUSEL - Continuous Non-Stop Ticker
+    // ============================================================
+    const booksSwiper = new Swiper('.books-swiper', {
+      loop: true,
+      loopAdditionalSlides: 5,
+      loopedSlides: 10,
+      centeredSlides: false,
+      slidesPerView: 1.5,
+      spaceBetween: 15,
+      allowTouchMove: true,
+      freeMode: {
+        enabled: true,
+        momentum: false,
+      },
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      speed: 6000,
+      breakpoints: {
+        576: { slidesPerView: 2.5, spaceBetween: 15 },
+        768: { slidesPerView: 3, spaceBetween: 20 },
+        992: { slidesPerView: 4, spaceBetween: 20 },
+        1200: { slidesPerView: 5, spaceBetween: 20 },
+      }
+    });
+  </script>
+
+  <style>
+    /* ===== SWIPER BOOKS CAROUSEL ===== */
+    .books-swiper {
+      width: 100%;
+      padding: 1rem 0.5rem !important;
+      overflow: hidden !important;
+    }
+    .books-swiper .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+    .featured-books-section { overflow: hidden !important; }
+    
+    .books-swiper .swiper-slide {
+      /* Removed hardware acceleration to fix blurriness */
+    }
+    
+    /* Arrow styling */
+    .books-prev, .books-next {
+      width: 40px !important;
+      height: 40px !important;
+      background: transparent !important;
+      color: var(--navy) !important;
+      margin-top: -20px !important;
+    }
+    .books-prev { left: 0 !important; }
+    .books-next { right: 0 !important; }
+    
+    .books-prev::after {
+      content: '\25C0' !important; /* Left pointing triangle */
+      font-size: 2rem !important;
+      font-family: inherit !important;
+    }
+    .books-next::after {
+      content: '\25B6' !important; /* Right pointing triangle */
+      font-size: 2rem !important;
+      font-family: inherit !important;
+    }
+    .books-prev:hover, .books-next:hover {
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .books-swiper { padding: 1rem 0 !important; }
+      .books-prev, .books-next { display: none !important; }
+    }
+  </style>
+</body>
+</html>

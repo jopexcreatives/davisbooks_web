@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Mr. Davis Atuahene Agyei – author and speaker. Reach out via WhatsApp, email, or this contact form." />
+  <title>Contact | Mr. Davis Atuahene Agyei</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======== TOP BAR ======== -->
+  <div class="top-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>📖 Welcome to Davis Books And More</span>
+      <div class="d-flex gap-3 align-items-center">
+        <a href="tel:+233208154228"><i class="bi bi-telephone me-1"></i>+233 208154228</a>
+        <span class="separator">|</span>
+        <a href="mailto:davisagyeiatuahene@gmail.com"><i class="bi bi-envelope me-1"></i>davisagyeiatuahene@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar main-nav navbar-expand-lg">
+    <div class="container">
+      <!-- Logo / Brand -->
+      <a class="navbar-brand nav-brand" href="index.html">
+        <div class="nav-logo-icon">D</div>
+        Davis Books <span class="accent">And More</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="all-books.html">All Books</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 ms-auto mt-2 mt-lg-0">
+          <!-- Currency -->
+          <select class="currency-selector" id="currencySelect" onchange="changeCurrency(this.value)">
+            <option value="GHS">🇬🇭 GHS</option>
+            <option value="USD">🇺🇸 USD</option>
+            <option value="GBP">🇬🇧 GBP</option>
+            <option value="EUR">🇪🇺 EUR</option>
+            <option value="NGN">🇳🇬 NGN</option>
+          </select>
+          <!-- Search -->
+          <div class="nav-search-wrap d-none d-lg-flex">
+            <input type="text" class="nav-search-input" placeholder="Search books…" id="navSearch" onkeydown="if(event.key==='Enter'){window.location='all-books.html?q='+encodeURIComponent(this.value)}"/>
+            <button class="nav-search-btn" onclick="window.location='all-books.html?q='+encodeURIComponent(document.getElementById('navSearch').value)">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== PAGE HERO ======== -->
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">We'd love to hear from you</p>
+      <h1>Contact Mr. Davis</h1>
+      <div class="gold-line mt-3"></div>
+      <p>Reach out for book purchases, speaking engagements, or any enquiries.</p>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT SECTION ======== -->
+  <section class="contact-section section-pad">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Contact Info (Left Card - Equal Size col-lg-6) -->
+        <div class="col-lg-6 d-flex">
+          <div class="contact-card w-100 d-flex flex-column" style="border: 1px solid #e6eaf0; border-radius: 12px; padding: 2.2rem; background: #ffffff;">
+            <h3 style="color:var(--navy);font-weight:800;margin-bottom:0.4rem;">Get in Touch</h3>
+            <div class="gold-line-left" style="margin-bottom:1.5rem;"></div>
+
+            <p style="color:#5a6a80;font-size:0.92rem;margin-bottom:1.5rem;line-height:1.65;">
+              Whether you want to purchase a book, request a speaking engagement, or simply say hello — we are always happy to connect with you.
+            </p>
+
+            <!-- Individual Contact Cards like About Me section -->
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="d-flex align-items-center gap-3 p-3" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+                <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                </div>
+                <div>
+                  <strong style="color:var(--navy);display:block;font-size:0.95rem;margin-bottom:0.15rem;">WhatsApp</strong>
+                  <a href="https://wa.me/233208154228" target="_blank" style="color:var(--text);font-size:0.88rem;font-weight:500;">+233 208154228</a>, - <small class="text-muted" style="font-size:0.82rem;">Fastest way to reach us</small>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-3" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+                <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                  <i class="bi bi-envelope-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong style="color:var(--navy);display:block;font-size:0.95rem;margin-bottom:0.15rem;">Email</strong>
+                  <a href="mailto:davisagyeiatuahene@gmail.com" style="color:var(--text);font-size:0.88rem;font-weight:500;">davisagyeiatuahene@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-3" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+                <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                  <i class="bi bi-geo-alt-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong style="color:var(--navy);display:block;font-size:0.95rem;margin-bottom:0.15rem;">Location</strong>
+                  <span style="color:var(--text);font-size:0.88rem;font-weight:500;">Ghana, West Africa</span>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center gap-3 p-3" style="border: 1px solid #e6eaf0; border-radius: 8px; background: #ffffff;">
+                <div style="width: 44px; height: 44px; border-radius: 8px; background: #fdf8ed; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #b27a1c;">
+                  <i class="bi bi-bag-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong style="color:var(--navy);display:block;font-size:0.95rem;margin-bottom:0.15rem;">Buy Books</strong>
+                  <a href="https://wa.me/233208154228?text=I%20want%20to%20purchase%20a%20book" target="_blank" style="color:var(--text);font-size:0.88rem;font-weight:500;">WhatsApp</a>
+                  <span class="text-muted mx-1">•</span>
+                  <a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" style="color:var(--text);font-size:0.88rem;font-weight:500;">Amazon Store</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social icons matching outline style -->
+            <div class="mt-auto pt-2">
+              <p class="fw-700 mb-2" style="color:var(--navy);font-size:0.88rem;">Follow on Social Media</p>
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="https://facebook.com" target="_blank" class="btn-outline-navy" style="width:42px;height:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:1.15rem;" aria-label="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="btn-outline-navy" style="width:42px;height:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:1.15rem;" aria-label="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="btn-outline-navy" style="width:42px;height:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:1.15rem;" aria-label="YouTube">
+                  <i class="bi bi-youtube"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="btn-outline-navy" style="width:42px;height:42px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:1.15rem;" aria-label="TikTok">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form (Right Card - Equal Size col-lg-6) -->
+        <div class="col-lg-6 d-flex">
+          <div class="contact-card w-100 d-flex flex-column" style="border: 1px solid #e6eaf0; border-radius: 12px; padding: 2.2rem; background: #ffffff;">
+            <h3 style="color:var(--navy);font-weight:800;margin-bottom:0.4rem;">Send a Message</h3>
+            <div class="gold-line-left" style="margin-bottom:1.5rem;"></div>
+            <p class="text-muted" style="font-size:0.88rem;margin-bottom:1.8rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
+
+            <form action="https://formsubmit.co/davisagyeiatuahene@gmail.com" method="POST" class="d-flex flex-column flex-grow-1">
+              <input type="hidden" name="_subject" value="New Message from Website"/>
+              <input type="hidden" name="_captcha" value="false"/>
+              <input type="hidden" name="_next" value="contact.html?sent=true"/>
+
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="contactName">Full Name <span class="text-gold">*</span></label>
+                  <input type="text" id="contactName" name="name" class="form-control-custom" placeholder="Your full name" required />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="contactEmail">Email Address <span class="text-gold">*</span></label>
+                  <input type="email" id="contactEmail" name="email" class="form-control-custom" placeholder="your@email.com" required />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="contactPhone">Phone Number</label>
+                  <input type="tel" id="contactPhone" name="phone" class="form-control-custom" placeholder="+233 XXX XXX XXX" />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="contactSubject">Subject <span class="text-gold">*</span></label>
+                  <select id="contactSubject" name="subject" class="form-control-custom filter-select w-100" style="border:2px solid var(--beige);background:var(--ivory);" required>
+                    <option value="">Select a subject...</option>
+                    <option value="Book Purchase">Book Purchase Enquiry</option>
+                    <option value="Speaking Engagement">Speaking Engagement</option>
+                    <option value="General Enquiry">General Enquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="contactMessage">Message <span class="text-gold">*</span></label>
+                  <textarea id="contactMessage" name="message" class="form-control-custom" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn-gold w-100" style="padding:0.85rem;">
+                    Send Message <i class="bi bi-send ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Success Banner (shows if ?sent=true) -->
+            <div id="successBanner" class="d-none mt-3 p-3" style="background:#d4edda;border-radius:8px;color:#155724;font-size:0.9rem;">
+              <i class="bi bi-check-circle-fill me-2"></i>Your message was sent successfully! We'll get back to you soon.
+            </div>
+
+            <!-- Quick WhatsApp Alternative -->
+            <div class="mt-4 p-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background:var(--beige);border-radius:8px;">
+              <div>
+                <p class="fw-700 mb-0" style="color:var(--navy);font-size:0.88rem;">Prefer to chat directly?</p>
+                <small class="text-muted" style="font-size:0.78rem;">Connect with us on WhatsApp</small>
+              </div>
+              <a href="https://wa.me/233208154228?text=Hello%20Mr.%20Davis,%20I%20found%20your%20website%20and%20would%20like%20to%20get%20in%20touch." target="_blank" class="btn-gold" style="font-size:0.85rem;padding:0.5rem 1.2rem;">
+                <i class="bi bi-whatsapp me-1"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">Davis Books And More</span>
+          <p>Dedicated to the propagation of the Gospel through books that inspire faith, reveal biblical truth, and transform lives.</p>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="all-books.html">All Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank">Amazon Store</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Contact</h5>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
+        </div>
+        <div class="col-lg-3">
+          <h5>Purchase Options</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20a%20book" target="_blank"><i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank"><i class="bi bi-bag me-2"></i>Buy on Amazon</a></li>
+            <li><a href="all-books.html"><i class="bi bi-book me-2"></i>Browse All Books</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> Mr. Davis Atuahene Agyei. All rights reserved.
+        &nbsp;|&nbsp; Developed by Jopex Creatives
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/233XXXXXXXXX?text=Hello%20Mr.%20Davis,%20I%20want%20to%20get%20in%20touch." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Currency switcher
+    const rates = {
+      GHS: { flag: '🇬🇭', symbol: 'GHS', rate: 1      },
+      USD: { flag: '🇺🇸', symbol: '$',   rate: 0.067  },
+      GBP: { flag: '🇬🇧', symbol: '£',   rate: 0.053  },
+      EUR: { flag: '🇪🇺', symbol: '€',   rate: 0.060  },
+      NGN: { flag: '🇳🇬', symbol: '₦',   rate: 106    }
+    };
+    function changeCurrency(currency) {
+      const c = rates[currency];
+      document.querySelectorAll('.price-tag').forEach(el => {
+        const base = parseFloat(el.getAttribute('data-ghs'));
+        el.innerHTML = `${c.flag} ${c.symbol} ${(base * c.rate).toFixed(2)}`;
+      });
+      localStorage.setItem('currency', currency);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('currency') || 'GHS';
+      const sel = document.getElementById('currencySelect');
+      if (sel) sel.value = saved;
+      changeCurrency(saved);
+
+      // Show success banner if redirected from form
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('sent') === 'true') {
+        document.getElementById('successBanner').classList.remove('d-none');
+      }
+    });
+  </script>
+</body>
+</html>

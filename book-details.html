@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Book details – Mr. Davis Atuahene Agyei. Read full description, reviews, and purchase your copy." />
+  <title>Book Details | Mr. Davis Atuahene Agyei</title>
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======== NAVBAR ======== -->
+  <nav class="navbar main-nav navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand nav-brand" href="index.html">
+        <div class="nav-logo-icon">D</div>
+        Davis Books <span class="accent">And More</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="all-books.html">All Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/@MrDavisAgye" target="_blank"><i class="bi bi-youtube"></i> YouTube</a>
+          </li>
+          <li class="nav-item ms-2">
+            <select class="currency-selector" id="currencySelect" onchange="changeCurrency(this.value)">
+              <option value="GHS">🇬🇭 GHS</option>
+              <option value="USD">🇺🇸 USD</option>
+              <option value="GBP">🇬🇧 GBP</option>
+              <option value="EUR">🇪🇺 EUR</option>
+              <option value="NGN">🇳🇬 NGN</option>
+            </select>
+          </li>
+          <li class="nav-item ms-2">
+            <a href="all-books.html" class="btn-gold" style="font-size:0.8rem;padding:0.55rem 1.25rem;">Browse Books</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======== BREADCRUMB ======== -->
+  <div style="background:var(--beige);padding:0.75rem 0;">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0" style="font-size:0.82rem;">
+          <li class="breadcrumb-item"><a href="index.html" style="color:var(--navy);">Home</a></li>
+          <li class="breadcrumb-item"><a href="all-books.html" style="color:var(--navy);">All Books</a></li>
+          <li class="breadcrumb-item active text-muted" id="breadBookTitle">Book Details</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======== BOOK DETAILS ======== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5 align-items-start" id="bookDetailContent">
+
+        <!-- Cover -->
+        <div class="col-lg-4 text-center">
+          <img id="detailCover" src="https://placehold.co/400x560/102A43/D4A017?text=The+Journey+Within&font=montserrat" alt="Book Cover" class="detail-cover"/>
+          <div class="mt-4 d-flex flex-column gap-2">
+            <a id="buyWhatsApp" href="https://wa.me/233XXXXXXXXX?text=I%20want%20to%20buy%20The%20Journey%20Within" target="_blank" class="btn-gold w-100 text-center">
+              <i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp
+            </a>
+            <a id="buyAmazon" href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" class="btn-amazon w-100 text-center" style="display:inline-block;padding:0.75rem;">
+              <i class="bi bi-bag-fill me-2"></i>Buy on Amazon
+            </a>
+          </div>
+          <div class="mt-3 text-center">
+            <small class="text-muted"><i class="bi bi-shield-check me-1 text-gold"></i>Secure purchase. Instant delivery via WhatsApp or Amazon.</small>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="col-lg-8">
+          <span class="book-genre" id="detailGenre">Personal Development</span>
+          <h1 class="section-title mt-2" id="detailTitle">The Journey Within</h1>
+          <p style="color:var(--text-mute);font-size:0.9rem;" id="detailAuthor">by Mr. Davis Atuahene Agyei</p>
+
+          <div class="d-flex align-items-center gap-3 my-3">
+            <div class="book-stars" id="detailStars">★★★★★</div>
+            <span style="font-size:0.85rem;color:var(--text-mute);">(128 reviews)</span>
+          </div>
+
+          <div class="mb-3" id="detailFormats">
+            <span class="format-badge">EPUB</span>
+            <span class="format-badge">PDF</span>
+          </div>
+
+          <div class="mb-4">
+            <span class="book-price fs-2" id="detailPrice">
+              <span class="price-tag" data-ghs="65">GHS 65</span>
+            </span>
+          </div>
+
+          <div class="gold-line-left mb-4"></div>
+
+          <h5 class="fw-700 mb-2" style="color:var(--navy);">About This Book</h5>
+          <p id="detailDesc1">A powerful guide to self-discovery and inner transformation that helps you unlock your true potential and live with purpose. Drawing from personal experience and deep research, Mr. Davis walks you through a journey of understanding yourself at a deeper level.</p>
+          <p id="detailDesc2">This book will help you identify your strengths, overcome your fears, and build the life you've always dreamed of — one step at a time. Practical exercises and reflection prompts are included throughout.</p>
+
+          <h5 class="fw-700 mt-4 mb-2" style="color:var(--navy);">Author</h5>
+          <div class="d-flex align-items-start gap-3">
+            <img src="info/mr davis.jpg" alt="Mr Davis" style="width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);" onerror="this.src='https://placehold.co/55x55/102A43/D4A017?text=MD&font=montserrat'"/>
+            <div>
+              <strong style="color:var(--navy);">Mr. Davis Atuahene Agyei</strong>
+              <p style="font-size:0.83rem;margin:0.25rem 0 0;color:var(--text-mute);">Author, Motivational Speaker & Thought Leader. Passionate about transforming lives through the power of words.</p>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex gap-3 flex-wrap">
+            <a id="buyWhatsApp2" href="https://wa.me/233XXXXXXXXX?text=I%20want%20to%20buy%20The%20Journey%20Within" target="_blank" class="btn-gold">
+              <i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp
+            </a>
+            <a href="contact.html" class="btn-outline-navy">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== REVIEWS ======== -->
+      <div class="mt-5 pt-4">
+        <h3 class="section-title">Customer Reviews</h3>
+        <div class="gold-line-left"></div>
+
+        <div class="review-card">
+          <div class="d-flex justify-content-between flex-wrap mb-2">
+            <div>
+              <span class="review-author">Akosua M.</span>
+              <span class="ms-2 review-date">— June 2025</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p style="font-size:0.9rem;">"This book changed my perspective completely. Every chapter felt like Mr. Davis was speaking directly to me. Highly recommended!"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="d-flex justify-content-between flex-wrap mb-2">
+            <div>
+              <span class="review-author">Kwame O.</span>
+              <span class="ms-2 review-date">— May 2025</span>
+            </div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <p style="font-size:0.9rem;">"Practical, deep, and inspiring. I have read many self-help books but this one stands out. The writing style is so clear and relatable."</p>
+        </div>
+
+        <div class="review-card">
+          <div class="d-flex justify-content-between flex-wrap mb-2">
+            <div>
+              <span class="review-author">Blessing A.</span>
+              <span class="ms-2 review-date">— April 2025</span>
+            </div>
+            <div class="review-stars">★★★★☆</div>
+          </div>
+          <p style="font-size:0.9rem;">"A wonderful read. I loved how Mr. Davis connects real-life experiences with actionable steps. I am already implementing the lessons."</p>
+        </div>
+      </div>
+
+      <!-- ======== RELATED BOOKS ======== -->
+      <div class="mt-5 pt-2">
+        <h3 class="section-title">You May Also Like</h3>
+        <div class="gold-line-left"></div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4">
+            <div class="book-card">
+              <div class="book-card-img-wrap">
+                <img src="https://placehold.co/400x560/1a3f5e/D4A017?text=Rise+Above&font=montserrat" alt="Rise Above"/>
+              </div>
+              <div class="book-card-body">
+                <span class="book-genre">Motivation</span>
+                <h3 class="book-title">Rise Above</h3>
+                <p class="book-price"><span class="price-tag" data-ghs="55">GHS 55</span></p>
+                <div class="book-actions">
+                  <a href="https://wa.me/233XXXXXXXXX?text=I%20want%20to%20buy%20Rise%20Above" target="_blank" class="btn-gold"><i class="bi bi-whatsapp me-1"></i>Buy</a>
+                  <a href="book-details.html?book=2" class="btn-outline-navy">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="book-card">
+              <div class="book-card-img-wrap">
+                <img src="https://placehold.co/400x560/243B53/D4A017?text=Faith+in+Action&font=montserrat" alt="Faith in Action"/>
+              </div>
+              <div class="book-card-body">
+                <span class="book-genre">Faith &amp; Spirituality</span>
+                <h3 class="book-title">Faith in Action</h3>
+                <p class="book-price"><span class="price-tag" data-ghs="50">GHS 50</span></p>
+                <div class="book-actions">
+                  <a href="https://wa.me/233XXXXXXXXX?text=I%20want%20to%20buy%20Faith%20in%20Action" target="_blank" class="btn-gold"><i class="bi bi-whatsapp me-1"></i>Buy</a>
+                  <a href="book-details.html?book=3" class="btn-outline-navy">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="book-card">
+              <div class="book-card-img-wrap">
+                <img src="https://placehold.co/400x560/0a1d2e/C89B3C?text=The+Leader%27s+Code&font=montserrat" alt="The Leader's Code"/>
+              </div>
+              <div class="book-card-body">
+                <span class="book-genre">Leadership</span>
+                <h3 class="book-title">The Leader's Code</h3>
+                <p class="book-price"><span class="price-tag" data-ghs="70">GHS 70</span></p>
+                <div class="book-actions">
+                  <a href="https://wa.me/233XXXXXXXXX?text=I%20want%20to%20buy%20The%20Leader%27s%20Code" target="_blank" class="btn-gold"><i class="bi bi-whatsapp me-1"></i>Buy</a>
+                  <a href="book-details.html?book=4" class="btn-outline-navy">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">Davis Books And More</span>
+          <p>Dedicated to the propagation of the Gospel through books that inspire faith, reveal biblical truth, and transform lives.</p>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="all-books.html">All Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank">Amazon Store</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Contact</h5>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
+        </div>
+        <div class="col-lg-3">
+          <h5>Purchase Options</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20a%20book" target="_blank"><i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank"><i class="bi bi-bag me-2"></i>Buy on Amazon</a></li>
+            <li><a href="all-books.html"><i class="bi bi-book me-2"></i>Browse All Books</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> Mr. Davis Atuahene Agyei. All rights reserved.
+        &nbsp;|&nbsp; Developed by Jopex Creatives
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/233XXXXXXXXX?text=Hello%20Mr.%20Davis,%20I%20want%20to%20buy%20a%20book." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const rates = {
+      GHS: { code: 'gh', symbol: 'GHS', rate: 1      },
+      USD: { code: 'us', symbol: '$',   rate: 0.067  },
+      GBP: { code: 'gb', symbol: '£',   rate: 0.053  },
+      EUR: { code: 'eu', symbol: '€',   rate: 0.060  },
+      NGN: { code: 'ng', symbol: '₦',   rate: 106    }
+    };
+
+    function changeCurrency(currency) {
+      const c = rates[currency];
+      document.querySelectorAll('.price-tag').forEach(el => {
+        const base = parseFloat(el.getAttribute('data-ghs'));
+        el.innerHTML = `<img src="https://flagcdn.com/20x15/${c.code}.png" alt="${currency}" style="margin-right:4px; vertical-align:baseline; border-radius:2px;"> ${c.symbol} ${(base * c.rate).toFixed(2)}`;
+      });
+      localStorage.setItem('currency', currency);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('currency') || 'GHS';
+      const sel = document.getElementById('currencySelect');
+      if (sel) sel.value = saved;
+      changeCurrency(saved);
+    });
+  </script>
+</body>
+</html>

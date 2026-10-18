@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Browse all books by Mr. Davis Atuahene Agyei — Buy via WhatsApp, Amazon or MoMo."/>
+  <title>All Books | Davis Books And More</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar main-nav navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand nav-brand" href="index.html">
+        <div class="nav-logo-icon">D</div>
+        Davis Books <span class="accent">And More</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link active" href="all-books.html">All Books</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions-group ms-auto mt-3 mt-lg-0">
+          <button class="nav-icon-action" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <button class="nav-icon-action nav-cart-btn" aria-label="Shopping Cart">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="nav-cart-badge">0</span>
+          </button>
+          <a href="#login" class="btn-nav-account">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Mr. Davis Atuahene Agyei</p>
+      <h1>All Books</h1>
+      <div class="gold-line mt-3"></div>
+      <p>Discover all titles — personal development, motivation, faith, and more.</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="py-4" style="background:var(--beige);">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-5">
+          <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search by title or genre…" oninput="filterBooks(this.value)"/>
+        </div>
+        <div class="col-md-3">
+          <select class="filter-select w-100" id="categoryFilter" onchange="applyFilters()">
+            <option value="">All Books</option>
+            <option value="The Journey Within">The Journey Within</option>
+            <option value="Rise Above">Rise Above</option>
+            <option value="Faith in Action">Faith in Action</option>
+            <option value="The Leader's Code">The Leader's Code</option>
+            <option value="Seeds of Wisdom">Seeds of Wisdom</option>
+            <option value="Unstoppable">Unstoppable</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="filter-select w-100" id="sortFilter" onchange="applyFilters()">
+            <option value="default">Sort: Default</option>
+            <option value="price-low">Price: Low → High</option>
+            <option value="price-high">Price: High → Low</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+        <div class="col-md-1 text-end">
+          <small class="fw-bold text-muted" id="bookCount"></small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS GRID -->
+  <section class="section-pad" style="background: var(--white);">
+    <div class="container">
+      <div class="row g-4" id="booksGrid">
+
+        <!-- BOOK 1: The Expected Glory -->
+        <div class="col-6 col-md-4 col-lg-3 book-item" data-category="Faith & Spirituality" data-price="65" data-year="2024" data-title="the expected glory of the latter church">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Expected Glory of the Latter Church-1.jpg.jpeg" alt="The Expected Glory of the Latter Church" loading="lazy" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Expected Glory of the Latter Church</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Expected%20Glory" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 2: Jesus Must Remain -->
+        <div class="col-6 col-md-4 col-lg-3 book-item" data-category="Faith & Spirituality" data-price="60" data-year="2024" data-title="jesus must remain in heaven until">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Jesus Must Remain in Heaven UNTIL... (1)-1.jpg.jpeg" alt="Jesus Must Remain in Heaven Until..." loading="lazy" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Jesus Must Remain in Heaven Until...</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Jesus%20Must%20Remain" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 3: Who Told You That You Were Naked -->
+        <div class="col-6 col-md-4 col-lg-3 book-item" data-category="Faith & Spirituality" data-price="60" data-year="2023" data-title="who told you that you were naked">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/WHO TOLD YOU THAT YOU WERE NAKED-1.png" alt="Who Told You That You Were Naked?" loading="lazy" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Who Told You That You Were Naked?</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 60.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Who%20Told%20You" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 4: Temptation -->
+        <div class="col-6 col-md-4 col-lg-3 book-item" data-category="Faith & Spirituality" data-price="55" data-year="2024" data-title="temptation">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/Temptation front.jpg.jpeg" alt="Temptation" loading="lazy" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">Temptation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 55.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20Temptation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOOK 5: The Making of a Nation -->
+        <div class="col-6 col-md-4 col-lg-3 book-item" data-category="Leadership" data-price="65" data-year="2023" data-title="the making of a nation">
+          <div class="book-card-alt">
+            <div class="book-img-box">
+              <img src="images/The Making of a Nation-1.jpg" alt="The Making of a Nation" loading="lazy" />
+            </div>
+            <div class="book-card-details">
+              <h3 class="book-card-name">The Making of a Nation</h3>
+              <div class="book-card-divider"></div>
+              <div class="book-card-bottom">
+                <span class="book-card-price">GH&#8373; 65.00</span>
+                <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20The%20Making%20of%20a%20Nation" target="_blank" class="btn-cart-circle" aria-label="Buy on WhatsApp">
+                  <i class="bi bi-cart3"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- No results -->
+      <div id="noResults" class="text-center py-5 d-none">
+        <i class="bi bi-search fs-1 text-muted"></i>
+        <p class="text-muted mt-3">No books found. Try a different keyword or category.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMAZON BANNER -->
+  <section class="amazon-section">
+    <div class="container text-center">
+      <h2 style="color:#fff;font-weight:800;margin-bottom:0.5rem;">Also on Amazon</h2>
+      <p style="color:rgba(255,255,255,0.7);margin-bottom:2rem;">Buy as Kindle ebook or paperback — delivered worldwide.</p>
+      <a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" class="btn-amazon">
+        <i class="bi bi-bag-fill me-2"></i>Shop on Amazon
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">Davis Books And More</span>
+          <p>Dedicated to the propagation of the Gospel through books that inspire faith, reveal biblical truth, and transform lives.</p>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="all-books.html">All Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Contact</h5>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
+        </div>
+        <div class="col-lg-3">
+          <h5>Purchase Options</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20a%20book" target="_blank"><i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank"><i class="bi bi-bag me-2"></i>Buy on Amazon</a></li>
+            <li><a href="all-books.html"><i class="bi bi-book me-2"></i>Browse All Books</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> Mr. Davis Atuahene Agyei. All rights reserved.
+        &nbsp;|&nbsp; Developed by Jopex Creatives
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOOK PREVIEW MODAL -->
+  <div class="modal fade modal-preview" id="previewModal" tabindex="-1" aria-labelledby="previewTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="previewTitle">Book Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="preview-iframe-wrap">
+          <iframe id="previewIframe" src="" allowfullscreen></iframe>
+          <div class="preview-block-overlay">
+            <div class="preview-block-msg">
+              <h5>Enjoying the preview?</h5>
+              <p>You've reached the free preview limit (2 pages).<br/>Purchase the full book to continue reading.</p>
+              <a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20this%20book" target="_blank" class="btn-gold me-2" style="font-size:0.82rem;padding:0.55rem 1.2rem;">
+                <i class="bi bi-whatsapp me-1"></i>Buy via WhatsApp
+              </a>
+              <a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank" class="btn-amazon" style="font-size:0.82rem;padding:0.55rem 1.2rem;">Amazon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/233208154228?text=Hello%20Mr.%20Davis,%20I%20want%20to%20buy%20a%20book." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const rates = {
+      GHS: { flag: '🇬🇭', symbol: 'GHS', rate: 1      },
+      USD: { flag: '🇺🇸', symbol: '$',   rate: 0.067  },
+      GBP: { flag: '🇬🇧', symbol: '£',   rate: 0.053  },
+      EUR: { flag: '🇪🇺', symbol: '€',   rate: 0.060  },
+      NGN: { flag: '🇳🇬', symbol: '₦',   rate: 106    }
+    };
+    function changeCurrency(currency) {
+      const c = rates[currency];
+      document.querySelectorAll('.price-tag').forEach(el => {
+        const base = parseFloat(el.getAttribute('data-ghs'));
+        el.innerHTML = `${c.flag} ${c.symbol} ${(base * c.rate).toFixed(2)}`;
+      });
+      localStorage.setItem('currency', currency);
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('currency') || 'GHS';
+      const sel = document.getElementById('currencySelect');
+      if (sel) sel.value = saved;
+      changeCurrency(saved);
+      updateCount();
+
+      // Check URL param for search
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q) {
+        document.getElementById('searchInput').value = q;
+        filterBooks(q);
+      }
+
+      // Add blurred background to book cards
+      document.querySelectorAll('.book-card-img-wrap').forEach(wrap => {
+        const img = wrap.querySelector('img');
+        if(img) {
+          const bg = document.createElement('div');
+          bg.style.position = 'absolute';
+          bg.style.inset = '-20px';
+          bg.style.backgroundImage = `url('${img.src}')`;
+          bg.style.backgroundSize = 'cover';
+          bg.style.backgroundPosition = 'center';
+          bg.style.filter = 'blur(15px)';
+          bg.style.opacity = '0.5';
+          bg.style.zIndex = '0';
+          wrap.insertBefore(bg, img);
+          
+          wrap.style.display = 'flex';
+          wrap.style.alignItems = 'center';
+          wrap.style.justifyContent = 'center';
+          wrap.style.padding = '1.5rem';
+          
+          img.style.position = 'relative';
+          img.style.zIndex = '1';
+          img.style.maxHeight = '100%';
+          img.style.width = 'auto';
+          img.style.boxShadow = '0 10px 25px rgba(0,0,0,0.3)';
+          img.style.borderRadius = '4px';
+        }
+      });
+    });
+
+    function filterBooks(query) {
+      document.getElementById('searchInput').value = query || document.getElementById('searchInput').value;
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query    = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      const category = document.getElementById('categoryFilter').value;
+      const sort     = document.getElementById('sortFilter').value;
+      let items = Array.from(document.querySelectorAll('.book-item'));
+      const words = query.split(/\s+/).filter(w => w);
+
+      items.forEach(item => {
+        const title = item.getAttribute('data-title').toLowerCase();
+        const cat   = item.getAttribute('data-category');
+        const matchQ = words.length === 0 || words.some(w => title.includes(w));
+        // since we changed categories to books, we should match by title or let the generic matchC pass if empty
+        const titleOrig = item.getAttribute('data-title');
+        const matchC = !category || titleOrig.toLowerCase() === category.toLowerCase();
+        item.style.display = (matchQ && matchC) ? '' : 'none';
+      });
+
+      const grid = document.getElementById('booksGrid');
+      const visible = items.filter(i => i.style.display !== 'none');
+      if (sort === 'price-low')  visible.sort((a,b) => +a.dataset.price - +b.dataset.price);
+      if (sort === 'price-high') visible.sort((a,b) => +b.dataset.price - +a.dataset.price);
+      if (sort === 'newest')     visible.sort((a,b) => +b.dataset.year  - +a.dataset.year);
+      visible.forEach(item => grid.appendChild(item));
+
+      document.getElementById('noResults').classList.toggle('d-none', visible.length > 0);
+      updateCount();
+    }
+
+    function updateCount() {
+      const vis = document.querySelectorAll('.book-item:not([style*="display: none"]):not([style*="display:none"])');
+      const tot = document.querySelectorAll('.book-item');
+      const el = document.getElementById('bookCount');
+      if (el) el.textContent = vis.length + '/' + tot.length;
+    }
+
+    function openPreview(title, driveUrl) {
+      document.getElementById('previewTitle').textContent = 'Preview: ' + title;
+      document.getElementById('previewIframe').src = driveUrl;
+      new bootstrap.Modal(document.getElementById('previewModal')).show();
+    }
+    document.getElementById('previewModal').addEventListener('hidden.bs.modal', () => {
+      document.getElementById('previewIframe').src = '';
+    });
+  </script>
+</body>
+</html>
