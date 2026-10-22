@@ -12,41 +12,85 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar main-nav navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand nav-brand" href="index.html">
+  <nav class="navbar main-nav" id="mainNavbar">
+    <div class="container nav-container">
+      <a class="nav-brand" href="index.html">
         <div class="nav-logo-icon">D</div>
-        Davis Books <span class="accent">And More</span>
+        Davis Books <span class="accent">& More</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav mx-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
-          <li class="nav-item"><a class="nav-link active" href="all-books.html">All Books</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-actions-group ms-auto mt-3 mt-lg-0">
-          <button class="nav-icon-action" aria-label="Search">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </button>
-          <button class="nav-icon-action nav-cart-btn" aria-label="Shopping Cart">
-            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-            </svg>
-            <span class="nav-cart-badge">0</span>
-          </button>
-          <a href="#login" class="btn-nav-account">Login</a>
-        </div>
+      <div class="nav-right-fixed">
+        <button class="nav-icon-action" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="nav-icon-action nav-cart-btn" aria-label="Shopping Cart">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="nav-cart-badge">0</span>
+        </button>
+        <a href="#login" class="btn-nav-account d-none d-lg-inline-flex">Login</a>
+        <button class="nav-hamburger d-lg-none" id="navToggler" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-links-desktop d-none d-lg-flex">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="index.html#about">About Me</a></li>
+        <li><a class="nav-link active" href="all-books.html">All Books</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Drawer (Left Offcanvas) -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="mobile-drawer-brand">
+          <div class="nav-logo-icon">D</div>
+          <span>DAVIS <span style="color: var(--gold);">BOOKS</span></span>
+        </a>
+        <button class="mobile-drawer-close" id="drawerCloseBtn" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li>
+          <a class="nav-link" href="index.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="index.html#about">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            About Me
+          </a>
+        </li>
+        <li>
+          <a class="nav-link active" href="all-books.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            All Books
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="contact.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Contact
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="#login" class="btn-nav-account mobile-login-btn">Login</a>
       </div>
     </div>
+    <!-- Drawer backdrop -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
   </nav>
 
   <!-- PAGE HERO -->
@@ -405,6 +449,59 @@
     document.getElementById('previewModal').addEventListener('hidden.bs.modal', () => {
       document.getElementById('previewIframe').src = '';
     });
+  </script>
+  <script>
+    (function() {
+      const toggler = document.getElementById('navToggler');
+      const drawer = document.getElementById('mobileDrawer');
+      const backdrop = document.getElementById('mobileDrawerBackdrop');
+      const closeBtn = document.getElementById('drawerCloseBtn');
+      if (!toggler || !drawer) return;
+
+      function openMenu() {
+        drawer.classList.add('open');
+        if (backdrop) backdrop.classList.add('open');
+        toggler.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        drawer.classList.remove('open');
+        if (backdrop) backdrop.classList.remove('open');
+        toggler.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      toggler.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (drawer.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+      drawer.querySelectorAll('.nav-link, a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Any tap on screen outside the drawer closes the menu
+      document.addEventListener('click', function(e) {
+        if (!drawer.classList.contains('open')) return;
+        if (!drawer.contains(e.target) && !toggler.contains(e.target)) {
+          closeMenu();
+        }
+      });
+      document.addEventListener('touchstart', function(e) {
+        if (!drawer.classList.contains('open')) return;
+        if (!drawer.contains(e.target) && !toggler.contains(e.target)) {
+          closeMenu();
+        }
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
