@@ -40,7 +40,6 @@
           </svg>
           <span class="nav-cart-badge">0</span>
         </button>
-        <a href="#login" class="btn-nav-account d-none d-lg-inline-flex">Login</a>
         <!-- Hamburger -->
         <button class="nav-hamburger d-lg-none" id="navToggler" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileDrawer">
           <span></span><span></span><span></span>
@@ -49,10 +48,11 @@
 
       <!-- Desktop nav links -->
       <ul class="nav-links-desktop d-none d-lg-flex">
-        <li><a class="nav-link active" href="index.html">Home</a></li>
-        <li><a class="nav-link" href="index.html#about">About Me</a></li>
-        <li><a class="nav-link" href="all-books.html">All Books</a></li>
-        <li><a class="nav-link" href="contact.html">Contact</a></li>
+        <li><a class="nav-link active" href="index.html"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+        <li><a class="nav-link" href="index.html#about"><i class="bi bi-person-fill me-1" aria-hidden="true"></i>About</a></li>
+        <li><a class="nav-link" href="all-books.html"><i class="bi bi-journals me-1" aria-hidden="true"></i>All Books</a></li>
+        <li><a class="nav-link" href="contact.html"><i class="bi bi-envelope-fill me-1" aria-hidden="true"></i>Contact</a></li>
+        <li><a class="nav-link" href="account.html"><i class="bi bi-person-circle me-1" aria-hidden="true"></i>Account</a></li>
       </ul>
     </div>
 
@@ -80,12 +80,12 @@
         <li>
           <a class="nav-link" href="index.html#about">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            About Me
+            About
           </a>
         </li>
         <li>
           <a class="nav-link" href="all-books.html">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <i class="bi bi-journals me-2" style="font-size: 1.1rem; color: var(--gold);" aria-hidden="true"></i>
             All Books
           </a>
         </li>
@@ -95,9 +95,15 @@
             Contact
           </a>
         </li>
+        <li>
+          <a class="nav-link" href="account.html">
+            <i class="bi bi-person-circle me-2" style="font-size: 1.1rem;" aria-hidden="true"></i>
+            Account
+          </a>
+        </li>
       </ul>
       <div class="mobile-drawer-footer">
-        <a href="#login" class="btn-nav-account mobile-login-btn">Login</a>
+        <a href="account.html" class="btn-nav-account mobile-login-btn"><i class="bi bi-person-circle me-2" aria-hidden="true"></i>Account</a>
       </div>
     </div>
     <!-- Drawer backdrop -->
@@ -105,7 +111,7 @@
   </nav>
 
   <!-- ======== HERO ======== -->
-  <section class="hero-section" id="home" style="background-image: url('images/hero-bg-new.jpg?v=2') !important; background-size: cover !important; background-position: right top !important; background-repeat: no-repeat !important;">
+  <section class="hero-section" id="home">
     <div class="hero-overlay"></div>
 
     <!-- Content overlay -->
@@ -123,7 +129,7 @@
           <a href="all-books.html" class="btn-gold hero-btn" style="border-radius: 8px; text-decoration: none; white-space: nowrap;">
             Explore Books <i class="bi bi-chevron-right ms-1"></i>
           </a>
-          <a href="#about" class="btn-outline-white hero-btn" style="border-radius: 8px; color: #ffffff; border: 1px solid rgba(255,255,255,0.6); text-decoration: none; white-space: nowrap;">
+          <a href="#about" class="btn-outline-white hero-author-btn hero-btn">
             Meet the Author
           </a>
         </div>
@@ -185,8 +191,8 @@
         </div>
         <!-- Photo Right -->
         <div class="col-lg-5 text-center order-1 order-lg-2 d-flex justify-content-center align-items-center">
-          <div class="author-photo-frame" style="width: 100%; max-width: 420px;">
-            <img src="images/author-portrait.png" alt="Mr. Davis Atuahene Agyei" class="author-photo" style="max-width: 100%; border-radius: 12px;"/>
+          <div class="author-photo-frame">
+            <img src="images/author-portrait new.png" alt="Mr. Davis Atuahene Agyei" class="author-photo" style="max-width: 100%;"/>
           </div>
         </div>
       </div>
@@ -473,9 +479,9 @@
   </section>
 
   <!-- ======== NEWSLETTER ======== -->
-  <section class="section-pad" style="background:var(--beige); padding-top:2.5rem; padding-bottom:2.5rem;">
+  <section class="section-pad" style="background:var(--beige); padding-top:1rem; padding-bottom:0.5rem;">
     <div class="container">
-      <hr style="border:none; border-top:1.5px solid var(--gold); margin:0 0 1.5rem 0; opacity:1;"/>
+      <hr class="newsletter-divider"/>
       <div class="newsletter-box">
         <div class="row align-items-center g-4">
           <div class="col-lg-6">
@@ -492,22 +498,27 @@
           </div>
         </div>
       </div>
+      <hr class="newsletter-divider"/>
     </div>
   </section>
 
   <!-- ======== CTA BAR (like design — "Have Questions?") ======== -->
   <section class="cta-bar">
     <div class="container">
-      <hr style="border:none; border-top:1.5px solid var(--gold); margin:0 0 1.5rem 0; opacity:1;"/>
       <div class="row align-items-center g-3">
         <div class="col-md-1 text-center d-none d-md-block">
           <div style="width:55px;height:55px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto;">
-            <i class="bi bi-envelope-fill fs-4 text-gold"></i>
+            <svg class="cta-question-icon" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="18" cy="16" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M5 40c1-9 6-14 13-14s12 5 13 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="36" cy="11" r="9" fill="var(--beige)" stroke="currentColor" stroke-width="2"/>
+              <text x="36" y="15.5" text-anchor="middle" fill="currentColor" font-size="13" font-weight="700" font-family="Arial, sans-serif">?</text>
+            </svg>
           </div>
         </div>
         <div class="col-md-5">
-          <h4>Have Any Questions or Need More Info?</h4>
-          <p>Contact us via WhatsApp or email — we respond quickly!</p>
+          <h4><span class="cta-heading-desktop">Have Questions or Need More Information?</span><span class="cta-heading-mobile">Have Questions or Need More Info?</span></h4>
+          <p>Reach out to me via WhatsApp or connect with me on social media. I'm happy to help!</p>
         </div>
         <div class="col-md-3">
           <a href="https://wa.me/233208154228?text=Hello%20Mr.%20Davis,%20I%20have%20a%20question." target="_blank" class="btn-gold w-100 text-center">
@@ -516,10 +527,10 @@
         </div>
         <div class="col-md-3">
           <div class="d-flex gap-3 justify-content-center justify-content-md-end">
-            <a href="https://facebook.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-youtube"></i></a>
-            <a href="https://linkedin.com" target="_blank" style="color:var(--navy);font-size:1.4rem;"><i class="bi bi-linkedin"></i></a>
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn cta-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn cta-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn cta-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-social-btn cta-social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
@@ -553,9 +564,9 @@
         </div>
         <div class="col-sm-6 col-lg-3">
           <h5>Contact</h5>
-          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
-          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
-          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a id="footer-whatsapp-link" href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a id="footer-phone-link" href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a id="footer-email-link" href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
           <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
         </div>
         <div class="col-lg-3">
@@ -614,6 +625,45 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Supabase CDN Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script>
+    // Sync social links & author info on live site
+    (async function syncSiteSettings() {
+      try {
+        let social = null;
+        let author = null;
+        const sb = typeof getSupabase === 'function' ? getSupabase() : null;
+        if (sb) {
+          const { data: s } = await sb.from('site_settings').select('value').eq('key', 'social_links').single();
+          const { data: a } = await sb.from('site_settings').select('value').eq('key', 'author_info').single();
+          if (s) social = s.value;
+          if (a) author = a.value;
+        }
+        if (!social) {
+          try { social = JSON.parse(localStorage.getItem('davis_social_links')); } catch(e){}
+        }
+        if (!author) {
+          try { author = JSON.parse(localStorage.getItem('davis_author_info')); } catch(e){}
+        }
+
+        if (author) {
+          const phoneEl = document.getElementById('footer-phone-link');
+          const emailEl = document.getElementById('footer-email-link');
+          if (phoneEl && author.phone) { phoneEl.textContent = author.phone; phoneEl.href = 'tel:' + author.phone.replace(/\s+/g,''); }
+          if (emailEl && author.email) { emailEl.textContent = author.email; emailEl.href = 'mailto:' + author.email; }
+        }
+        if (social) {
+          const waEl = document.getElementById('footer-whatsapp-link');
+          if (waEl && social.whatsapp) {
+            waEl.textContent = social.whatsapp;
+            waEl.href = 'https://wa.me/' + social.whatsapp.replace(/[^0-9]/g, '');
+          }
+        }
+      } catch(e) {}
+    })();
+  </script>
 
   <script>
     // ============================================================
@@ -770,7 +820,8 @@
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        pauseOnMouseEnter: false,
+        waitForTransition: false,
       },
       speed: 6000,
       breakpoints: {

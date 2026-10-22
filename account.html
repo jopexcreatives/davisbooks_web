@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Account | Davis Books & More</title>
+  <meta name="description" content="Sign In or Create an Account at Davis Books & More"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <style>
+    .auth-page-section {
+      min-height: calc(100vh - 120px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7.5rem 1rem 4.5rem;
+      background: #f8fafc;
+      position: relative;
+    }
+    .auth-card {
+      background: #00051a;
+      border: 2px solid var(--gold);
+      box-shadow: 0 20px 45px rgba(0, 5, 26, 0.28), 0 0 25px rgba(212, 160, 23, 0.2);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 480px;
+      padding: 2.4rem 2.2rem;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+    }
+    .auth-tabs {
+      display: flex;
+      background: #040c2f;
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(212, 160, 23, 0.25);
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 0.65rem 0.5rem;
+      border: none;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+    .auth-tab-btn.active {
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 700;
+      box-shadow: 0 3px 12px rgba(212, 160, 23, 0.4);
+    }
+    .auth-form-group {
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+    .auth-form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.02em;
+    }
+    .auth-form-control {
+      width: 100%;
+      background: #040c2f;
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: 8px;
+      padding: 0.72rem 1rem;
+      color: #ffffff;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      font-family: inherit;
+    }
+    .auth-form-control:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.25);
+    }
+    .auth-submit-btn {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-weight: 700;
+      font-size: 0.98rem;
+      padding: 0.82rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .auth-submit-btn:hover {
+      background: #ffffff;
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 160, 23, 0.4);
+    }
+    .social-auth-btn {
+      width: 100%;
+      background: #ffffff;
+      color: #1a202c;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+    .social-auth-btn:hover {
+      background: #f8fafc;
+      border-color: var(--gold);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transform: translateY(-1px);
+    }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 1.4rem 0 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .auth-divider span {
+      padding: 0 0.8rem;
+    }
+    .auth-alert {
+      display: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      text-align: left;
+    }
+    .auth-alert.danger {
+      display: block;
+      background: rgba(220, 53, 69, 0.22);
+      border: 1px solid rgba(220, 53, 69, 0.5);
+      color: #ff9da4;
+    }
+    .auth-alert.success {
+      display: block;
+      background: rgba(40, 167, 69, 0.22);
+      border: 1px solid rgba(40, 167, 69, 0.5);
+      color: #8ce9ae;
+    }
+    .auth-footer-note {
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 1.4rem;
+    }
+    .auth-footer-note a {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .auth-footer-note a:hover {
+      text-decoration: underline;
+    }
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: -0.4rem;
+      margin-bottom: 1rem;
+    }
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+    .user-profile-view {
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar main-nav" id="mainNavbar">
+    <div class="container nav-container">
+      <a class="nav-brand" href="index.html">
+        <div class="nav-logo-icon">D</div>
+        Davis Books <span class="accent">& More</span>
+      </a>
+      <div class="nav-right-fixed">
+        <button class="nav-icon-action" aria-label="Search" onclick="window.location='all-books.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="nav-icon-action nav-cart-btn" aria-label="Shopping Cart">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="nav-cart-badge">0</span>
+        </button>
+        <button class="nav-hamburger d-lg-none" id="navToggler" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-links-desktop d-none d-lg-flex">
+        <li><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1" aria-hidden="true"></i>Home</a></li>
+        <li><a class="nav-link" href="index.html#about"><i class="bi bi-person-fill me-1" aria-hidden="true"></i>About</a></li>
+        <li><a class="nav-link" href="all-books.html"><i class="bi bi-journals me-1" aria-hidden="true"></i>All Books</a></li>
+        <li><a class="nav-link" href="contact.html"><i class="bi bi-envelope-fill me-1" aria-hidden="true"></i>Contact</a></li>
+        <li><a class="nav-link active" href="account.html"><i class="bi bi-person-circle me-1" aria-hidden="true"></i>Account</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Drawer (Left Offcanvas) -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="mobile-drawer-brand">
+          <div class="nav-logo-icon">D</div>
+          <span>DAVIS <span style="color: var(--gold);">BOOKS</span></span>
+        </a>
+        <button class="mobile-drawer-close" id="drawerCloseBtn" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li>
+          <a class="nav-link" href="index.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="index.html#about">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            About
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="all-books.html">
+            <i class="bi bi-journals me-2" style="font-size: 1.1rem; color: var(--gold);" aria-hidden="true"></i>
+            All Books
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="contact.html">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a class="nav-link active" href="account.html">
+            <i class="bi bi-person-circle me-2" style="font-size: 1.1rem; color: var(--gold);" aria-hidden="true"></i>
+            Account
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="account.html" class="btn-nav-account mobile-login-btn"><i class="bi bi-person-circle me-2" aria-hidden="true"></i>Account</a>
+      </div>
+    </div>
+    <!-- Drawer backdrop -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+  </nav>
+
+  <!-- AUTH SECTION -->
+  <main class="auth-page-section">
+    <div class="auth-card">
+      
+      <!-- Logged-in state view -->
+      <div id="userProfileView" class="user-profile-view">
+        <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--gold); color: var(--navy-dark); font-size: 2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; font-weight: 800;">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <h3 id="profileName" style="font-weight: 800; margin-bottom: 0.35rem;">Welcome</h3>
+        <p id="profileEmail" style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;"></p>
+        <div style="background: #040c2f; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: left; border: 1px solid rgba(212,160,23,0.25);">
+          <div style="font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-bottom: 0.35rem;">Account Status</div>
+          <div style="font-size: 0.9rem;">Verified Reader</div>
+        </div>
+        <div class="d-grid gap-2">
+          <a href="all-books.html" class="btn-gold" style="border-radius: 8px; padding: 0.75rem; text-decoration: none; font-weight: 700;">Browse All Books</a>
+          <button id="logoutBtn" class="btn btn-outline-light" style="border-radius: 8px; padding: 0.75rem; font-weight: 600;">Sign Out</button>
+        </div>
+      </div>
+
+      <!-- Auth Form Container -->
+      <div id="authFormsContainer">
+        <!-- Tabs -->
+        <div class="auth-tabs" role="tablist">
+          <button type="button" class="auth-tab-btn active" id="tabSignInBtn" onclick="switchAuthTab('signin')">Sign In</button>
+          <button type="button" class="auth-tab-btn" id="tabSignUpBtn" onclick="switchAuthTab('signup')">Create Account</button>
+        </div>
+
+        <div id="authAlert" class="auth-alert" role="alert"></div>
+
+        <!-- Google / Gmail OAuth Button -->
+        <button type="button" class="social-auth-btn" onclick="handleGoogleSignIn()">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <div class="auth-divider">
+          <span>or continue with email</span>
+        </div>
+
+        <!-- SIGN IN FORM -->
+        <form id="signInForm" onsubmit="handleSignIn(event)">
+          <div class="auth-form-group">
+            <label for="signInEmail">Email Address</label>
+            <input type="email" id="signInEmail" class="auth-form-control" placeholder="name@example.com" required autocomplete="email"/>
+          </div>
+          <div class="auth-form-group">
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" class="auth-form-control" placeholder="••••••••" required autocomplete="current-password"/>
+          </div>
+          <a href="javascript:void(0)" class="forgot-link" onclick="switchAuthTab('forgot')">Forgot Password?</a>
+          <button type="submit" class="auth-submit-btn" id="signInSubmitBtn">
+            <span>Sign In</span> <i class="bi bi-arrow-right"></i>
+          </button>
+          <div class="auth-footer-note">
+            Don't have an account? <a href="javascript:void(0)" onclick="switchAuthTab('signup')">Create Account</a>
+          </div>
+        </form>
+
+        <!-- CREATE ACCOUNT FORM -->
+        <form id="signUpForm" onsubmit="handleSignUp(event)" style="display: none;">
+          <div class="auth-form-group">
+            <label for="signUpName">Full Name</label>
+            <input type="text" id="signUpName" class="auth-form-control" placeholder="John Doe" required autocomplete="name"/>
+          </div>
+          <div class="auth-form-group">
+            <label for="signUpEmail">Email Address</label>
+            <input type="email" id="signUpEmail" class="auth-form-control" placeholder="name@example.com" required autocomplete="email"/>
+          </div>
+          <div class="auth-form-group">
+            <label for="signUpPassword">Create Password</label>
+            <input type="password" id="signUpPassword" class="auth-form-control" placeholder="At least 6 characters" minlength="6" required autocomplete="new-password"/>
+          </div>
+          <button type="submit" class="auth-submit-btn" id="signUpSubmitBtn">
+            <span>Create Account</span> <i class="bi bi-person-check-fill"></i>
+          </button>
+          <div class="auth-footer-note">
+            Already have an account? <a href="javascript:void(0)" onclick="switchAuthTab('signin')">Sign In</a>
+          </div>
+        </form>
+
+        <!-- FORGOT PASSWORD FORM -->
+        <form id="forgotForm" onsubmit="handleForgotPassword(event)" style="display: none;">
+          <div style="font-size:0.88rem; color: rgba(255,255,255,0.8); margin-bottom: 1.2rem; line-height: 1.6;">
+            Enter your email address and we'll send you a link to reset your password.
+          </div>
+          <div class="auth-form-group">
+            <label for="forgotEmail">Email Address</label>
+            <input type="email" id="forgotEmail" class="auth-form-control" placeholder="name@example.com" required autocomplete="email"/>
+          </div>
+          <button type="submit" class="auth-submit-btn" id="forgotSubmitBtn">
+            <span>Send Reset Link</span> <i class="bi bi-envelope-paper-fill"></i>
+          </button>
+          <div class="auth-footer-note">
+            Remember your password? <a href="javascript:void(0)" onclick="switchAuthTab('signin')">Back to Sign In</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">Davis Books And More</span>
+          <p>Dedicated to the propagation of the Gospel through books that inspire faith, reveal biblical truth, and transform lives.</p>
+          <div class="d-flex gap-2 mt-3 flex-wrap">
+            <a href="https://facebook.com" target="_blank" class="footer-social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="footer-social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@MrDavisAgye" target="_blank" class="footer-social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" class="footer-social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://twitter.com" target="_blank" class="footer-social-btn" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="all-books.html">All Books</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Contact</h5>
+          <p><i class="bi bi-whatsapp me-2 text-gold"></i><a href="https://wa.me/233208154228">+233 208154228</a></p>
+          <p><i class="bi bi-telephone me-2 text-gold"></i><a href="tel:+233242627071">+233 242627071</a></p>
+          <p><i class="bi bi-envelope me-2 text-gold"></i><a href="mailto:davisagyeiatuahene@gmail.com">davisagyeiatuahene@gmail.com</a></p>
+          <p><i class="bi bi-geo-alt me-2 text-gold"></i>Ghana, West Africa</p>
+        </div>
+        <div class="col-lg-3">
+          <h5>Purchase Options</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://wa.me/233208154228?text=I%20want%20to%20buy%20a%20book" target="_blank"><i class="bi bi-whatsapp me-2"></i>Buy via WhatsApp</a></li>
+            <li><a href="https://www.amazon.com/s?k=Mr+Davis+Atuanene+Agye" target="_blank"><i class="bi bi-bag me-2"></i>Buy on Amazon</a></li>
+            <li><a href="all-books.html"><i class="bi bi-book me-2"></i>Browse All Books</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <p class="footer-bottom">
+        &copy; <span id="year"></span> Mr. Davis Atuahene Agyei. All rights reserved.
+        &nbsp;|&nbsp; Developed by Jopex Creatives
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tab switching
+    function switchAuthTab(mode) {
+      const signInForm = document.getElementById('signInForm');
+      const signUpForm = document.getElementById('signUpForm');
+      const forgotForm = document.getElementById('forgotForm');
+      const tabSignInBtn = document.getElementById('tabSignInBtn');
+      const tabSignUpBtn = document.getElementById('tabSignUpBtn');
+      const alertBox = document.getElementById('authAlert');
+      alertBox.className = 'auth-alert';
+      alertBox.textContent = '';
+
+      if (mode === 'signup') {
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'block';
+        forgotForm.style.display = 'none';
+        tabSignInBtn.classList.remove('active');
+        tabSignUpBtn.classList.add('active');
+      } else if (mode === 'forgot') {
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'none';
+        forgotForm.style.display = 'block';
+        tabSignInBtn.classList.remove('active');
+        tabSignUpBtn.classList.remove('active');
+      } else {
+        signInForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+        forgotForm.style.display = 'none';
+        tabSignInBtn.classList.add('active');
+        tabSignUpBtn.classList.remove('active');
+      }
+    }
+
+    // Check query params (?mode=signup or ?mode=forgot)
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('mode') === 'signup') {
+        switchAuthTab('signup');
+      } else if (params.get('mode') === 'forgot') {
+        switchAuthTab('forgot');
+      }
+      checkCurrentUser();
+    });
+
+    function showAlert(message, type) {
+      const alertBox = document.getElementById('authAlert');
+      alertBox.className = 'auth-alert ' + type;
+      alertBox.textContent = message;
+    }
+
+    async function handleSignIn(e) {
+      e.preventDefault();
+      const email = document.getElementById('signInEmail').value.trim();
+      const password = document.getElementById('signInPassword').value;
+      const btn = document.getElementById('signInSubmitBtn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Signing in…</span>';
+
+      try {
+        const sb = getSupabase();
+        if (!sb) {
+          localStorage.setItem('davis_current_user', JSON.stringify({ email: email, user_metadata: { full_name: email.split('@')[0] } }));
+          showAlert('Signed in successfully!', 'success');
+          setTimeout(() => checkCurrentUser(), 800);
+          return;
+        }
+
+        const { data, error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+
+        showAlert('Signed in successfully!', 'success');
+        setTimeout(() => checkCurrentUser(), 800);
+      } catch (err) {
+        showAlert(err.message || 'Failed to sign in. Please check your credentials.', 'danger');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Sign In</span> <i class="bi bi-arrow-right"></i>';
+      }
+    }
+
+    async function handleSignUp(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('signUpName').value.trim();
+      const email = document.getElementById('signUpEmail').value.trim();
+      const password = document.getElementById('signUpPassword').value;
+      const btn = document.getElementById('signUpSubmitBtn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Creating Account…</span>';
+
+      try {
+        const sb = getSupabase();
+        if (!sb) {
+          localStorage.setItem('davis_current_user', JSON.stringify({ email: email, user_metadata: { full_name: fullName } }));
+          showAlert('Account created successfully!', 'success');
+          setTimeout(() => checkCurrentUser(), 800);
+          return;
+        }
+
+        const { data, error } = await sb.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { full_name: fullName }
+          }
+        });
+        if (error) throw error;
+
+        showAlert('Account created successfully! Check your email to confirm or sign in.', 'success');
+        setTimeout(() => switchAuthTab('signin'), 1200);
+      } catch (err) {
+        showAlert(err.message || 'Failed to create account.', 'danger');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Create Account</span> <i class="bi bi-person-check-fill"></i>';
+      }
+    }
+
+    async function handleForgotPassword(e) {
+      e.preventDefault();
+      const email = document.getElementById('forgotEmail').value.trim();
+      const btn = document.getElementById('forgotSubmitBtn');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span>Sending link…</span>';
+
+      try {
+        const sb = getSupabase();
+        if (sb) {
+          const { error } = await sb.auth.resetPasswordForEmail(email, {
+            redirectTo: window.location.origin + '/account.html'
+          });
+          if (error) throw error;
+        }
+        showAlert('Password reset link sent! Please check your email inbox.', 'success');
+      } catch (err) {
+        showAlert(err.message || 'Failed to send password reset email.', 'danger');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Send Reset Link</span> <i class="bi bi-envelope-paper-fill"></i>';
+      }
+    }
+
+    async function handleGoogleSignIn() {
+      try {
+        const sb = getSupabase();
+        if (!sb) {
+          // Demo fallback
+          localStorage.setItem('davis_current_user', JSON.stringify({ email: 'google.reader@gmail.com', user_metadata: { full_name: 'Google Reader' } }));
+          showAlert('Signed in with Google!', 'success');
+          setTimeout(() => checkCurrentUser(), 600);
+          return;
+        }
+
+        const { error } = await sb.auth.signInWithOAuth({
+          provider: 'google',
+          options: {
+            redirectTo: window.location.origin + '/account.html'
+          }
+        });
+        if (error) throw error;
+      } catch (err) {
+        showAlert(err.message || 'Google Sign In failed.', 'danger');
+      }
+    }
+
+    async function checkCurrentUser() {
+      const profileView = document.getElementById('userProfileView');
+      const formsContainer = document.getElementById('authFormsContainer');
+      const profileName = document.getElementById('profileName');
+      const profileEmail = document.getElementById('profileEmail');
+
+      let user = null;
+      try {
+        const sb = getSupabase();
+        if (sb) {
+          const { data } = await sb.auth.getUser();
+          user = data?.user;
+        }
+      } catch (e) {}
+
+      if (!user) {
+        const stored = localStorage.getItem('davis_current_user');
+        if (stored) user = JSON.parse(stored);
+      }
+
+      if (user) {
+        formsContainer.style.display = 'none';
+        profileView.style.display = 'block';
+        profileName.textContent = user.user_metadata?.full_name || 'Reader';
+        profileEmail.textContent = user.email || '';
+      } else {
+        formsContainer.style.display = 'block';
+        profileView.style.display = 'none';
+      }
+    }
+
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+      try {
+        const sb = getSupabase();
+        if (sb) await sb.auth.signOut();
+      } catch (e) {}
+      localStorage.removeItem('davis_current_user');
+      checkCurrentUser();
+    });
+
+    // Mobile nav drawer
+    const toggler = document.getElementById('navToggler');
+    const drawer = document.getElementById('mobileDrawer');
+    const backdrop = document.getElementById('mobileDrawerBackdrop');
+    const closeBtn = document.getElementById('drawerCloseBtn');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      toggler.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggler.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    toggler?.addEventListener('click', openDrawer);
+    closeBtn?.addEventListener('click', closeDrawer);
+    backdrop?.addEventListener('click', closeDrawer);
+  </script>
+</body>
+</html>
