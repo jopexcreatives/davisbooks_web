@@ -497,7 +497,7 @@ function updateOverviewMetrics() {
   const booksElem = document.getElementById('metric-books');
   const mgrElem = document.getElementById('metric-managers');
 
-  if (revElem) revElem.textContent = `GH₵ ${totalRevenue.toFixed(2)}`;
+  if (revElem) revElem.textContent = `GHS ${totalRevenue.toFixed(2)}`;
   if (salesElem) salesElem.textContent = totalSalesCount;
   if (booksElem) booksElem.textContent = totalBooksCount;
   if (mgrElem) mgrElem.textContent = managersCount;
@@ -521,7 +521,7 @@ function openModal(id) {
   if (id === 'modal-add-purchase') {
     const sel = document.getElementById('add-book-select');
     if (sel && cachedBooks.length > 0) {
-      sel.innerHTML = cachedBooks.map(b => `<option value="${b.id}">${escapeHtml(b.title)} (GH₵ ${b.price})</option>`).join('');
+      sel.innerHTML = cachedBooks.map(b => `<option value="${b.id}">${escapeHtml(b.title)} (GHS ${Number(b.price).toFixed(2)})</option>`).join('');
     }
   }
 }
