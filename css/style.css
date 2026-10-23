@@ -1364,6 +1364,30 @@ a { text-decoration: none; }
 }
 @media (max-width: 576px) {
   .newsletter-box { padding: 1.8rem 1.2rem; }
+  .nav-container {
+    gap: 0.5rem;
+    padding: 0.65rem 0.75rem;
+  }
+  .nav-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 0;
+  }
+  .nav-right-fixed {
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+  .nav-icon-action {
+    flex: 0 0 auto;
+    padding: 3px;
+  }
+  .nav-hamburger {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 36px;
+    padding: 0.25rem;
+  }
   .hero-actions {
     width: 100%;
   }

@@ -805,8 +805,9 @@
 
   <script>
     // ============================================================
-    //  SWIPER BOOKS CAROUSEL - Continuous Non-Stop Ticker
+    //  FEATURED BOOKS CAROUSEL - Auto-scroll resumes after manual swiping
     // ============================================================
+    let booksAutoplayResumeTimer;
     const booksSwiper = new Swiper('.books-swiper', {
       loop: true,
       loopAdditionalSlides: 5,
@@ -826,6 +827,18 @@
         waitForTransition: false,
       },
       speed: 6000,
+      on: {
+        touchStart(swiper) {
+          clearTimeout(booksAutoplayResumeTimer);
+          swiper.autoplay.stop();
+        },
+        touchEnd(swiper) {
+          clearTimeout(booksAutoplayResumeTimer);
+          booksAutoplayResumeTimer = setTimeout(() => {
+            if (!swiper.destroyed) swiper.autoplay.start();
+          }, 3000);
+        },
+      },
       breakpoints: {
         576: { slidesPerView: 2.5, spaceBetween: 15 },
         768: { slidesPerView: 3, spaceBetween: 20 },
