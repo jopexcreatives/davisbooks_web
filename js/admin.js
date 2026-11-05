@@ -23,7 +23,7 @@ function initSupabaseAdmin() {
   // Pre-fill Supabase config inputs
   const urlInput = document.getElementById('cfg-supabase-url');
   const keyInput = document.getElementById('cfg-supabase-key');
-  if (urlInput) urlInput.value = localStorage.getItem('davis_supabase_url') || '';
+  if (urlInput) urlInput.value = localStorage.getItem('davis_supabase_url') || DAVIS_SUPABASE_CONFIG.url;
   if (keyInput) keyInput.value = localStorage.getItem('davis_supabase_key') || '';
 
   // Load dashboard data
@@ -51,11 +51,11 @@ function switchTab(tabId) {
   });
 
   const tabTitles = {
-    overview: { title: 'Dashboard Overview', sub: "Welcome back. Here is Mr. Davis' books performance today." },
+    overview: { title: 'Dashboard Overview', sub: "Welcome back. Here is Davis' books performance today." },
     books: { title: 'Books & Digital Assets', sub: 'Upload PDF/EPUB books, assign secure storage, and set pricing.' },
     purchases: { title: 'Purchases & Customer Access', sub: 'Manage purchases, verify transactions, and grant direct customer access.' },
     managers: { title: 'Team & Purchase Managers', sub: 'Add authorized people to manage customer purchases and order verifications.' },
-    social: { title: 'Social Links & Author Profile', sub: 'Update Mr. Davis public social media links and author details.' },
+    social: { title: 'Social Links & Author Profile', sub: 'Update Davis public social media links and author details.' },
     settings: { title: 'Supabase & Security Settings', sub: 'Configure Supabase Database, Auth, and Storage keys.' }
   };
 
@@ -219,7 +219,7 @@ async function loadManagersData() {
 
     if (managers.length === 0) {
       managers = [
-        { id: 'm1', full_name: 'Mr. Davis (Author)', email: 'author@davisbooks.org', role: 'admin', created_at: '2026-01-01' },
+        { id: 'm1', full_name: 'Davis (Author)', email: 'author@davisbooks.org', role: 'admin', created_at: '2026-01-01' },
         { id: 'm2', full_name: 'Bookstore Manager - John', email: 'orders@davisbooks.org', role: 'manager', created_at: '2026-06-15' }
       ];
     }
@@ -289,7 +289,7 @@ async function loadSocialSettings() {
 
     if (!authorData) {
       authorData = {
-        name: "Mr. Davis",
+        name: "Davis",
         title: "Author, Speaker & Educator",
         bio: "Inspiring lives and providing timeless knowledge through books for a brighter future.",
         phone: "+233 24 123 4567",

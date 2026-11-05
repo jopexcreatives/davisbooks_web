@@ -197,7 +197,7 @@ values
     "youtube": "https://youtube.com"
   }'::jsonb),
   ('author_info', '{
-    "name": "Mr. Davis",
+    "name": "Davis",
     "title": "Author, Speaker & Educator",
     "bio": "Inspiring lives and providing timeless knowledge through books for a brighter future.",
     "phone": "+233 24 000 0000",
